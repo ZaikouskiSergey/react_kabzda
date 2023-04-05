@@ -7,13 +7,14 @@ import {Rating} from "./coponents/Rating/rating";
 function App() {
     return (
         <div>
-            <PageTitle title={"This is App component"}/>
+           {/* <PageTitle title={"This is App component"}/>
             <PageTitle title={"My friends"}/>
               Arcticle 1
-            <Rating value={1} />
+            <Rating value={1} />*/}
             <Accordion titleValue={"Menu"} collapsed={true}/>
             <Accordion titleValue={"Users"} collapsed={false}/>
-            <Accordion titleValue={"mark"} collapsed={false}/>
+
+
             Arcticle 2
             <Rating value={0} />
             <Rating value={1} />
