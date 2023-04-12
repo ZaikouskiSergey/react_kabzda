@@ -9,8 +9,8 @@ function UncontrolledAccordion(props: AccordionPropsType) {
 
     const [collapsed, setCollapsed] = useState(true)
     const onClickButtonHandler =()=>{
-        collapsed ? setCollapsed(false) : setCollapsed(true)
-
+        //collapsed ? setCollapsed(false) : setCollapsed(true)
+        setCollapsed(!collapsed)
     }
     return (
         <div>
