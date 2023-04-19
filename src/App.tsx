@@ -4,27 +4,47 @@ import Accordion from "./coponents/Accordion/Accordion";
 import {Rating} from "./coponents/Rating/rating";
 import {OnOff} from "./coponents/OnOf/OnOff";
 import UncontrolledAccordion from "./coponents/UncontrolledAccordion/UncontrolledAccordion";
-import { UncontrolledRating } from './coponents/UncontrolledRating/UncontrolledRating';
-export type RatingValueType = 0|1|2|3|4|5
+import {UncontrolledRating} from './coponents/UncontrolledRating/UncontrolledRating';
+import {UncontrolledOnOff} from "./coponents/OnOf/UncontrolledOnOff";
+
+export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+
 function App() {
 
-    const[retingValue, setRetingValue] =useState<RatingValueType>(0)
-    const [collapsedValue, setCollapsedValue]= useState<boolean>(false)
+    const [retingValue, setRetingValue] = useState<RatingValueType>(0)
+    const [collapsedValue1, setCollapsedValue1] = useState<boolean>(false)
+    const [collapsedValue2, setCollapsedValue2] = useState<boolean>(false)
+    const [switchOn, setSwitchOn] = useState<boolean>(false)
     return (
         <div className={'App'}>
-            <OnOff />
-            <OnOff />
-            <Accordion titleValue={"Menu"} collapsed={collapsedValue} setCollapsedValue={setCollapsedValue}/>
-            <Accordion titleValue={"Users"} collapsed={collapsedValue} setCollapsedValue={setCollapsedValue}/>
+            <UncontrolledOnOff onChange={setSwitchOn}/>
+            <UncontrolledOnOff onChange={setSwitchOn}/>
+
+           {/* <OnOff
+                on={switchOn}
+                onChange={setSwitchOn}/>
+            <OnOff
+                on={switchOn}
+                onChange={setSwitchOn}/>
+            <Accordion
+                titleValue={"Menu"}
+                collapsed={collapsedValue1}
+                onChange={() => setCollapsedValue1(!collapsedValue1)}
+            />*/}
+            <Accordion
+                titleValue={"Users"}
+                collapsed={collapsedValue2}
+                onChange={() => setCollapsedValue2(!collapsedValue2)}
+            />
 
 
-           {/* <UncontrolledAccordion titleValue={"Menu"} />
+            {/* <UncontrolledAccordion titleValue={"Menu"} />
             <UncontrolledAccordion titleValue={"Users"} />
             <UncontrolledRating />
             <Rating value={retingValue} setRetingValue={setRetingValue}/>*/}
 
 
-{/*            <PageTitle title={"This is App component"}/>
+            {/*            <PageTitle title={"This is App component"}/>
             <PageTitle title={"My friends"}/>
               Arcticle 1
             <Rating value={1} />
@@ -41,9 +61,11 @@ function App() {
         </div>
     );
 }
+
 type PageTitlePropsType = {
     title: string
 }
+
 function PageTitle(props: PageTitlePropsType) {
     return (
         <h1>
