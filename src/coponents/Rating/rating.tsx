@@ -1,7 +1,9 @@
 import React from "react";
+import {RatingValueType} from "../../App";
 
 type RatingPropsType = {
-    value: number
+    value: RatingValueType
+    setRetingValue: (value: RatingValueType) => void
 }
 
 export function Rating(props: RatingPropsType) {
@@ -9,25 +11,27 @@ export function Rating(props: RatingPropsType) {
 
     return (
         <div>
-            <Star selected={props.value > 0}/>
-            <Star selected={props.value > 1}/>
-            <Star selected={props.value > 2}/>
-            <Star selected={props.value > 3}/>
-            <Star selected={props.value > 4}/>
+            <Star selected={props.value > 0} value={1} setRetingValue={props.setRetingValue}/>
+            <Star selected={props.value > 1} value={2} setRetingValue={props.setRetingValue}/>
+            <Star selected={props.value > 2} value={3} setRetingValue={props.setRetingValue}/>
+            <Star selected={props.value > 3} value={4} setRetingValue={props.setRetingValue}/>
+            <Star selected={props.value > 4} value={5} setRetingValue={props.setRetingValue}/>
         </div>
     )
 }
 
 type StarPropsType = {
     selected: boolean
+    value: RatingValueType
+    setRetingValue: (value: RatingValueType) => void
 }
 
 function Star(props: StarPropsType) {
-    console.log('Star rendered')
-    if (props.selected === true) {
-        return <span><b>stars </b></span>
-    } else {
-        return <span>stars </span>
+    const onClickHandler = () => {
+        props.setRetingValue(props.value)
     }
+    console.log('Star rendered')
+    return <span onClick={onClickHandler}>{props.selected ? <b>star </b> : 'star '}</span>
+
 
 }
