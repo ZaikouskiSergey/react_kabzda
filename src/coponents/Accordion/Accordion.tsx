@@ -27,7 +27,7 @@ type AccordionTitlePropsType = {
 
 function AccordionTitle(props: AccordionTitlePropsType) {
 
-    return <h3 onClick={props.setCollapsedValue}> --{props.title}--</h3>
+    return <h3 onClick={(e)=>props.setCollapsedValue()}> --{props.title}--</h3>
 }
 
 type AccordionBody = {
