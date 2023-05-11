@@ -9,7 +9,7 @@ type AccordionPropsType = {
 function UncontrolledAccordion(props: AccordionPropsType) {
 
     // const [collapsed, setCollapsed] = useState(true)
-    const [collapsed, dispatch] = useReducer(Reducer, false)
+    const [state, dispatch] = useReducer(Reducer, {collapsed: true})
 
 
     const onClickButtonHandler = () => {
@@ -23,7 +23,7 @@ function UncontrolledAccordion(props: AccordionPropsType) {
                 onClickButtonHandler={onClickButtonHandler}
             />
             {/* <button onClick={onClickButtonHandler}>toggle</button>*/}
-            {!collapsed && <AccordionBody/>}
+            {!state.collapsed && <AccordionBody/>}
         </div>
     )
 }

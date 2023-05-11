@@ -3,10 +3,14 @@ export type ActionType = {
 }
 
 export const TOGGLE_COLLAPSED = "TOGGLE-COLLAPSED"
-export const Reducer = (state: boolean, action: ActionType) => {
+
+export type StateType = {
+    collapsed: boolean
+}
+export const Reducer = (state: StateType, action: ActionType):StateType => {
     switch (action.type) {
         case TOGGLE_COLLAPSED :
-            return !state
+            return {...state, collapsed: !state.collapsed} as const
         default :
             // return state
             throw new Error('Bad action type')
