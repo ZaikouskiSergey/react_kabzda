@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useReducer} from "react";
+import {Reducer, TOGGLE_COLLAPSED,} from "./Reducer";
 
 type AccordionPropsType = {
     titleValue: string
@@ -7,10 +8,13 @@ type AccordionPropsType = {
 
 function UncontrolledAccordion(props: AccordionPropsType) {
 
-    const [collapsed, setCollapsed] = useState(true)
-    const onClickButtonHandler =()=>{
+    // const [collapsed, setCollapsed] = useState(true)
+    const [collapsed, dispatch] = useReducer(Reducer, false)
+
+
+    const onClickButtonHandler = () => {
         //collapsed ? setCollapsed(false) : setCollapsed(true)
-        setCollapsed(!collapsed)
+        dispatch({type: TOGGLE_COLLAPSED})
     }
     return (
         <div>
@@ -18,7 +22,7 @@ function UncontrolledAccordion(props: AccordionPropsType) {
                 title={props.titleValue}
                 onClickButtonHandler={onClickButtonHandler}
             />
-           {/* <button onClick={onClickButtonHandler}>toggle</button>*/}
+            {/* <button onClick={onClickButtonHandler}>toggle</button>*/}
             {!collapsed && <AccordionBody/>}
         </div>
     )
@@ -26,10 +30,11 @@ function UncontrolledAccordion(props: AccordionPropsType) {
 
 type AccordionTitlePropsType = {
     title: string
-    onClickButtonHandler:()=>void
+    onClickButtonHandler: () => void
 }
+
 function AccordionTitle(props: AccordionTitlePropsType) {
-    const onClickH3Handler=()=>{
+    const onClickH3Handler = () => {
         props.onClickButtonHandler()
     }
 
