@@ -22,6 +22,14 @@ function App() {
                 titleValue={"Users"}
                 collapsed={collapsedValue2}
                 onChange={() => setCollapsedValue2(!collapsedValue2)}
+                items={[
+                    {title: 'petya', value: 1},
+                    {title: 'kolya', value: 2},
+                    {title: 'vasya', value: 3},
+                    {title: 'vanya', value: 4},
+                ]}
+                onClick={()=>{}}
+
             />
         </div>
     );
