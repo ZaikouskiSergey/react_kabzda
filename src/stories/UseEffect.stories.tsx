@@ -44,12 +44,12 @@ export const SetTimeoutExample = () => {
 
     console.log('SetTimeoutExample')
 
-    useEffect(() => {
+   /* useEffect(() => {
 
         setInterval(() => {
             setCounter((state) => state + 1)
         }, 1000)
-    }, [])
+    }, [])*/
 
 
     const onClickFakeButton = () => {
