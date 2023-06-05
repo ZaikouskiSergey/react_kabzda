@@ -6,6 +6,7 @@ import {OnOff} from "./coponents/OnOf/OnOff";
 import UncontrolledAccordion from "./coponents/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from './coponents/UncontrolledRating/UncontrolledRating';
 import {UncontrolledOnOff} from "./coponents/OnOf/UncontrolledOnOff";
+import AnalogClock from "./coponents/Clock/AnalogClock";
 
 export type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -30,7 +31,10 @@ function App() {
                 ]}
                 onClick={()=>{}}
 
+
             />
+
+
         </div>
     );
 }

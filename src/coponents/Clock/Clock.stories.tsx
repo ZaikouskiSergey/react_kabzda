@@ -1,5 +1,6 @@
 import Clock from "./Clock";
 
+
 export default {
     title: 'Clock',
     component: Clock
@@ -7,5 +8,5 @@ export default {
 }
 
 export const BaseExample=()=>{
-    return <Clock />
+    return <Clock view={'digital'}/>
 }
