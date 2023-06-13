@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import AnalogClock from "./AnalogClock";
 
 type ClockPropsType = {
-    view: string
+    view: 'analog' | 'digital'
 }
 
 function get2digitalsString(num: number) {
@@ -43,11 +43,9 @@ export const Clock: React.FC<ClockPropsType> = ({view}) => {
                     <span>{secondsStrings}</span>
 
                 </div>}
+        </div>
 
+    );
+};
 
-                </div>
-
-                );
-            };
-
-            export default Clock;
+export default Clock;

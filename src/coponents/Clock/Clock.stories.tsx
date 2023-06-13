@@ -7,6 +7,11 @@ export default {
 
 }
 
-export const BaseExample=()=>{
+export const BaseAnalogExample=()=>{
+    return <Clock view={'analog'}/>
+}
+
+export const BaseDigitalExample=()=>{
     return <Clock view={'digital'}/>
 }
+
